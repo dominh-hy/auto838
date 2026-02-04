@@ -1,0 +1,7 @@
+{
+  "name": "Hệ thống Xử lý Hợp đồng AI",
+  "description": "Ứng dụng tự động trích xuất thông tin từ CCCD, Giấy ĐKKD và tạo hợp đồng viễn thông theo quy tắc nghiệp vụ Mobifone.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

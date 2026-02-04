@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hệ thống Xử lý Hợp đồng AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    
+    /* CSS chuẩn cho văn bản pháp lý - Áp dụng cho cả Preview và Print */
+    .document-content {
+      font-family: 'Times New Roman', Times, serif !important;
+      line-height: 1.4 !important;
+      color: #000 !important;
+      text-align: justify !important;
+      font-size: 13pt !important;
+      background: white;
+    }
+    
+    .document-content p { 
+      margin: 0 0 10pt 0 !important;
+      line-height: 1.4 !important;
+    }
+    
+    .document-content h1, .document-content h2, .document-content h3, .document-content h4 { 
+      text-align: center !important; 
+      font-weight: bold !important; 
+      text-transform: uppercase !important;
+      margin: 12pt 0 !important;
+      line-height: 1.2 !important;
+    }
+
+    .document-content h1 { font-size: 14pt !important; }
+    .document-content h2 { font-size: 13pt !important; }
+
+    .document-content table { 
+      width: 100% !important; 
+      border-collapse: collapse !important; 
+      margin: 10pt 0 !important;
+      border: 1px solid black !important;
+    }
+
+    .document-content td, .document-content th { 
+      border: 1px solid black !important; 
+      padding: 6pt 8pt !important; 
+      vertical-align: top !important;
+      font-size: 12pt !important;
+    }
+
+    .document-content strong, .document-content b { font-weight: bold !important; }
+    
+    /* Căn chỉnh bảng không có viền nếu Word gốc quy định (tùy biến mammoth) */
+    .document-content table[border="0"] td { border: none !important; }
+
+    /* Custom scrollbar for preview */
+    .preview-container::-webkit-scrollbar { width: 8px; }
+    .preview-container::-webkit-scrollbar-track { background: #f1f1f1; }
+    .preview-container::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    .preview-container::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 30mm; /* Lề chuẩn VN: Trên 2, Dưới 2, Phải 1.5, Trái 3 */
+      }
+      body { background: white !important; }
+      .no-print { display: none !important; }
+      #root { display: none !important; }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "pizzip": "https://esm.sh/pizzip@3.1.7"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-100 text-slate-900">
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
